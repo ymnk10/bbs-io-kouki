@@ -38,12 +38,17 @@ public class ShowBbsController {
     return "index";
   }
 
-
   @PostMapping("/insert-article")
   public String insertArticle(ArticleForm form, Model model) {
     Article article = new Article();
     BeanUtils.copyProperties(form, article);
     articleRepository.insertArticle(article);
+    return "redirect:/show";
+  }
+
+  @PostMapping("/delete-article")
+  public String deleteArticle(String articleId) {
+    articleRepository.deleteByIdWithComments(Integer.parseInt(articleId));
     return "redirect:/show";
   }
 }
