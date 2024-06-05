@@ -35,6 +35,16 @@
           </div>
 
         </div>
+
+        <form th:action="@{/show/insert-comment}" method="post">
+          <p>コメント者名：</p>
+          <input name="name"><br>
+          <p>コメント内容：</p>
+          <textarea name="content" rows="8" cols="30"></textarea><br>
+          <button>コメント投稿</button>
+        </form>
+      </div>
+
         <hr />
       </div>
     </div>
