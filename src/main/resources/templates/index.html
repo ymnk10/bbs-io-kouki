@@ -47,6 +47,7 @@
           <p>コメント内容：</p>
           <textarea name="content" rows="8" cols="30"></textarea><br>
           <button>コメント投稿</button>
+          <input type="hidden" name="articleId" th:value="${article.id}">
         </form>
       </div>
 
