@@ -26,7 +26,11 @@
         <p th:text="${article.content}"></p>
         <div>
           <div>
-            <form>
+            <form th:action="@{/show/insert-article}" method="post">
+              <p>投稿者名：</p>
+              <input name="name"><br>
+              <p>投稿内容：</p>
+              <input name="content"><br>
               <button>コメント投稿</button>
             </form>
           </div>
