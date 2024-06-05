@@ -25,6 +25,14 @@
         <p>投稿内容：</p>
         <p th:text="${article.content}"></p>
         <div>
+          <div th:each="comment : ${article.commentList}">
+            <p>
+              コメント者名：
+              <span th:text="${comment.name}"></span>
+            </p>
+            <p>コメント内容：</p>
+            <p th:text="${comment.content}"></p>
+          </div>
           <div>
             <form th:action="@{/show/insert-article}" method="post">
               <p>投稿者名：</p>
