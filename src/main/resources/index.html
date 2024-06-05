@@ -17,9 +17,13 @@
     </div>
     <hr />
     <div>
-      <div>
-        <p>投稿者名：</p>
+      <div th:each="article : ${articles}">
+        <p>
+          投稿者名：
+          <span th:text="${article.name}"></span>
+        </p>
         <p>投稿内容：</p>
+        <p th:text="${article.content}"></p>
         <div>
           <div>
             <form>
