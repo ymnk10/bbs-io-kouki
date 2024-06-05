@@ -9,7 +9,7 @@ public class Comment {
     private Integer id;
     private String name;
     private String content;
-    private String articleId;
+    private Integer articleId;
 
     @Override
     public String toString() {
@@ -45,11 +45,11 @@ public class Comment {
         this.content = content;
     }
 
-    public String getArticleId() {
+    public Integer getArticleId() {
         return articleId;
     }
 
-    public void setArticleId(String articleId) {
+    public void setArticleId(Integer articleId) {
         this.articleId = articleId;
     }
 }
