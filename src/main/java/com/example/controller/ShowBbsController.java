@@ -2,9 +2,7 @@ package com.example.controller;
 
 
 import com.example.domain.Article;
-import com.example.domain.Comment;
 import com.example.form.ArticleForm;
-import com.example.form.CommentForm;
 import com.example.repository.ArticleRepository;
 import com.example.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +38,6 @@ public class ShowBbsController {
     return "index";
   }
 
-
   @PostMapping("/insert-article")
   public String insertArticle(ArticleForm form, Model model) {
     Article article = new Article();
@@ -49,11 +46,9 @@ public class ShowBbsController {
     return "redirect:/show";
   }
 
-  @PostMapping("/insert-comment")
-  public String insertComment(CommentForm form, Model model) {
-    Comment comment = new Comment();
-    BeanUtils.copyProperties(form, comment);
-    commentRepository.insertComment(comment);
+  @PostMapping("/delete-article")
+  public String deleteArticle(String articleId) {
+    articleRepository.deleteByIdWithComments(Integer.parseInt(articleId));
     return "redirect:/show";
   }
 }
