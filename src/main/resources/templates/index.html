@@ -6,15 +6,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
-      <form method="post">
-        <label for="name">投稿者名：</label>
-        <input type="text" /><br />
-        <label for="content">投稿内容：</label>
-        <textarea></textarea><br />
-        <button>記事投稿</button>
-      </form>
-    </div>
+  <div>
+    <form th:action="@{/show/insert-article}" method="post">
+      <p>投稿者名：</p>
+      <input name="name"><br>
+      <p>投稿内容：</p>
+      <textarea name="content" rows="8" cols="30"></textarea><br>
+      <button>記事投稿</button>
+    </form>
+  </div>
     <hr />
     <div>
       <div th:each="article : ${articles}">
@@ -33,15 +33,7 @@
             <p>コメント内容：</p>
             <p th:text="${comment.content}"></p>
           </div>
-          <div>
-            <form th:action="@{/show/insert-article}" method="post">
-              <p>投稿者名：</p>
-              <input name="name"><br>
-              <p>投稿内容：</p>
-              <input name="content"><br>
-              <button>コメント投稿</button>
-            </form>
-          </div>
+
         </div>
         <hr />
       </div>

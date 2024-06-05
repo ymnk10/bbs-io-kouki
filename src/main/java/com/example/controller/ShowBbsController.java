@@ -38,6 +38,7 @@ public class ShowBbsController {
     return "index";
   }
 
+
   @PostMapping("/insert-article")
   public String insertArticle(ArticleForm form, Model model) {
     Article article = new Article();
